@@ -13,11 +13,11 @@ function World:draw()
     scale(self.curScale)
     strokeWidth(1)
     stroke(0)
-    for x = 0,FEILDWIDTH/20 do
-        line(FEILDSTART + x*20,0,FEILDSTART + x*20,HEIGHT)
+    for x = 0,FIELDWIDTH/20 do
+        line(FIELDSTART + x*20,0,FIELDSTART + x*20,HEIGHT)
     end
-    for y = 0,FEILDHEIGHT//20 do
-        line(FEILDSTART,y*20,WIDTH,y*20)
+    for y = 0,FIELDHEIGHT//20 do
+        line(FIELDSTART,y*20,WIDTH,y*20)
     end
     
     popMatrix()

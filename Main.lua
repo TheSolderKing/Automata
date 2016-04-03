@@ -2,10 +2,11 @@
 
 -- Use this function to perform your initial setup
 function setup()
-    FEILDWIDTH = (WIDTH - WIDTH/3.72 )//10 * 10
-    FEILDHEIGHT = HEIGHT
-    FEILDSTART = WIDTH/3.72
-    print(FEILDWIDTH)
+    FIELDWIDTH = (WIDTH - WIDTH/3.72 )//10 * 10
+    FIELDHEIGHT = HEIGHT
+    FIELDSTART = WIDTH/3.72
+    print(FIELDWIDTH)
+    s = Sidebar()
     w = World()
     numTouches = 0
     touches = {}
@@ -18,15 +19,15 @@ function draw()
 
     -- This sets the line thickness
     strokeWidth(5)
-    sprite("Project:Sidebar",WIDTH/(3.72*2),HEIGHT/2,275,HEIGHT)
     -- Do your drawing here
     fill(0)
-    rect(FEILDSTART + FEILDWIDTH,0,10,HEIGHT)  
+    rect(FIELDSTART + FIELDWIDTH,0,10,HEIGHT)  
     w:draw()
     if numTouches == 1 then
     else 
         
     end
+    s:draw()
 end
 
 function touched(t)
@@ -39,4 +40,5 @@ function touched(t)
         numTouches = numTouches - 1
         touches[t.id] = nil
     end
+    s:touched(t)
 end
