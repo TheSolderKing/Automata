@@ -7,7 +7,7 @@ function setup()
     FIELDSTART = WIDTH/3.72
     print(FIELDWIDTH)
     s = Sidebar()
-    w = World()
+    w = World(s)
     numTouches = 0
     touches = {}
 end
@@ -41,4 +41,5 @@ function touched(t)
         touches[t.id] = nil
     end
     s:touched(t)
+    w:touched(t)
 end

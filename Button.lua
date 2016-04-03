@@ -14,13 +14,12 @@ end
 function Button:draw()
     -- Codea does not automatically call this method
     noStroke()
-    fill(255)
+    fill(self.color)
     if self.selected then
         rect(self.x-self.w/2-5,self.y-self.h/2-5,self.w+10,self.h+10)
     end
-    fill(self.color)
     rect(self.x-self.w/2,self.y-self.h/2,self.w,self.h)
-    fill(255)
+    fill(0, 0, 0, 255)
     font("AmericanTypewriter-Bold")
     text(self.text,self.x,self.y)
 end

@@ -3,9 +3,12 @@ Sidebar = class()
 function Sidebar:init()
     -- you can accept and set parameters here
     self.buttons = {
-    Button(FIELDSTART/2+45,5+FIELDHEIGHT/8,FIELDSTART/2,FIELDHEIGHT/4-5,"RED",color(255,0,0)),
-    Button(FIELDSTART/2+45,5+3*FIELDHEIGHT/8,FIELDSTART/2,FIELDHEIGHT/4-5,"GREEN",color(0,255,0))
+    Button(FIELDSTART/2+45,5+FIELDHEIGHT/10,FIELDSTART/2,FIELDHEIGHT/5-5,"RED",color(255,0,0)),
+    Button(FIELDSTART/2+45,5+3*FIELDHEIGHT/10,FIELDSTART/2,FIELDHEIGHT/5-5,"GREEN",color(0,255,0)),
+    Button(FIELDSTART/2+45,5+5*FIELDHEIGHT/10,FIELDSTART/2,FIELDHEIGHT/5-5,"BLUE",color(0,0,255)),
+    Button(FIELDSTART/2+45,5+7*FIELDHEIGHT/10,FIELDSTART/2,FIELDHEIGHT/5-5,"WHITE",color(255,255,255)),
     }
+    self.buttons[4]:select()
 end
 
 function Sidebar:draw()
