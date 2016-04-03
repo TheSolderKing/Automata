@@ -15,9 +15,19 @@ function World:init(sidebar)
             self.map[x][y] = self.colIds["WHITE"]
             local i = self.mesh:addRect(FIELDSTART + (x-1)*20+10,(y-1)*20+10,20,20)
             self.mesh:setRectColor(i,self.colVals["WHITE"])
-            print(x .. "," .. y .. ":" .. i)
         end
     end
+    self.bg = image(WIDTH,HEIGHT)
+    setContext(self.bg)
+    strokeWidth(1)
+    stroke(0)
+    for x = 0,FIELDWIDTH//20 do
+        line(FIELDSTART + x*20,0,FIELDSTART + x*20,HEIGHT)
+    end
+    for y = 0,FIELDHEIGHT//20 do
+        line(FIELDSTART,y*20,WIDTH,y*20)
+    end
+    setContext()
 end
 
 function World:draw()
@@ -28,12 +38,7 @@ function World:draw()
     self.mesh:draw()
     strokeWidth(1)
     stroke(0)
-    for x = 0,FIELDWIDTH//20 do
-        line(FIELDSTART + x*20,0,FIELDSTART + x*20,HEIGHT)
-    end
-    for y = 0,FIELDHEIGHT//20 do
-        line(FIELDSTART,y*20,WIDTH,y*20)
-    end
+    sprite(self.bg,WIDTH/2,HEIGHT/2)
     popMatrix()
 end
 
